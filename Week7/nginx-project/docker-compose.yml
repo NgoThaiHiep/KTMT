@@ -36,9 +36,19 @@ services:
       - mysql
     networks:
       - mynetwork
-
+  nginx-project:
+    build:
+      context: ./nginx-project
+    ports:
+      - "3000:3000"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
 volumes:
   mysql_data:
+  
+  
 
 networks:
   mynetwork:
